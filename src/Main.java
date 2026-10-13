@@ -8,13 +8,20 @@ public class Main {
             new Buch("The Hobbit", "J. R. R. Tolkien", 28.0f, 310)
         };
 
+        System.out.print("Autor -> ");
         Bibliothek bibliothek = new Bibliothek(buecherArray);
         Buch[] gefundeneBucher=bibliothek.findeAutor("Robert Martin");
         for (int i=0; i<gefundeneBucher.length; i++){
             System.out.println(gefundeneBucher[i].getTitel());
         }
 
+        System.out.print("Durchschnitt -> ");
         float durchschnitt=bibliothek.durchschnittSeiten(buecherArray);
         System.out.println(durchschnitt);
+
+        System.out.print("Maximal Preis (30) -> ");
+        Buch[] maximPreis=bibliothek.maximalPreis(30);
+        for (int i=0; i< maximPreis.length; i++)
+            System.out.println(maximPreis[i].getTitel());
     }
 }
