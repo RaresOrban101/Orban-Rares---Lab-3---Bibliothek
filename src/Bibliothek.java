@@ -31,4 +31,22 @@ public class Bibliothek {
         float durchschnitt=(float)s/ buecher.length;
         return durchschnitt;
     }
+
+    public Buch[] maximalPreis(int preis){
+        int count = 0;
+        for (int i = 0; i < buecher.length; i++) {
+            if (buecher[i].getPreis()<=preis) {
+                count++;
+            }
+        }
+        int aux=0;
+        Buch[] maximalPreis = new Buch[count];
+        for (int i = 0; i < buecher.length; i++) {
+            if (buecher[i].getPreis()<=preis) {
+                maximalPreis[aux]=buecher[i];
+                aux++;
+            }
+        }
+        return maximalPreis;
+    }
 }
