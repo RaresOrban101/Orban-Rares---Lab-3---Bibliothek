@@ -23,5 +23,9 @@ public class Main {
         Buch[] maximPreis=bibliothek.maximalPreis(30);
         for (int i=0; i< maximPreis.length; i++)
             System.out.println(maximPreis[i].getTitel());
+
+        Buch teuerstes = bibliothek.teuerstesBuch();
+        System.out.println("Teuerstes Buch: " + teuerstes.getTitel() + " (" + teuerstes.getPreis() + " Euro)");
     }
+
 }

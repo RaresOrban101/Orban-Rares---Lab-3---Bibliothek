@@ -12,7 +12,6 @@ public class Bibliothek {
             }
         }
 
-        // 2. Create the array with the EXACT count size
         Buch[] buecherAutor = new Buch[count];
         int aux=0;
         for (int i=0; i< buecher.length; i++){
@@ -48,5 +47,18 @@ public class Bibliothek {
             }
         }
         return maximalPreis;
+    }
+
+    public Buch teuerstesBuch(){
+        float maxi=buecher[0].getPreis();
+        Buch Teuerste = buecher[0];
+        for (int i=1; i< buecher.length; i++)
+        {
+            if (buecher[i].getPreis()>maxi){
+                maxi = buecher[i].getPreis();
+                Teuerste = buecher[i];
+            }
+        }
+        return Teuerste;
     }
 }
