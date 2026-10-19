@@ -80,4 +80,18 @@ public class Bibliothek {
         return minimalSeiten;
     }
 
+    public Buch[] Kombination(Buch[] buecher, int budget){
+        float maxsum=0;
+        Buch[] Kombinationen = new Buch[2];
+        for (int i=0; i<buecher.length-1; i++)
+            for (int j=i+1; j<buecher.length; j++){
+                if (buecher[i].getPreis()+buecher[j].getPreis()<=budget
+                && buecher[i].getPreis()+buecher[j].getPreis()>maxsum){
+                    Kombinationen[0]=buecher[i];
+                    Kombinationen[1]=buecher[j];
+                    maxsum=buecher[i].getPreis()+buecher[j].getPreis();
+                }
+            }
+        return Kombinationen;
+    }
 }
