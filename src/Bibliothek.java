@@ -61,4 +61,23 @@ public class Bibliothek {
         }
         return Teuerste;
     }
+
+    public Buch[] Mindestseitenanzahl(Buch[] buecher, int nrSeiten){
+        int count = 0;
+        for (int i = 0; i < buecher.length; i++) {
+            if (buecher[i].getAnzahlSeiten()>=nrSeiten) {
+                count++;
+            }
+        }
+        int aux=0;
+        Buch[] minimalSeiten = new Buch[count];
+        for (int i = 0; i < buecher.length; i++) {
+            if (buecher[i].getAnzahlSeiten()>=nrSeiten) {
+                minimalSeiten[aux]=buecher[i];
+                aux++;
+            }
+        }
+        return minimalSeiten;
+    }
+
 }
